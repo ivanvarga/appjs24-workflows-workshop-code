@@ -3,9 +3,9 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
+    "start": "APP_VARIANT=development expo start",
+    "android": "APP_VARIANT=development expo run:android",
+    "ios": "APP_VARIANT=development expo run:ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "strip-unused-fields-from-api-data": "node ./data/api/strip_fields.js"
@@ -33,7 +33,7 @@
     "expo-splash-screen": "~0.27.4",
     "expo-status-bar": "~1.12.1",
     "expo-system-ui": "~3.0.4",
-    "expo-updates": "~0.25.13",
+    "expo-updates": "^0.25.14",
     "expo-web-browser": "~13.0.3",
     "glob": "^10.3.12",
     "jsonfile": "^6.1.0",

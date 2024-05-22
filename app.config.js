@@ -1,6 +1,8 @@
-{
+const IS_DEV = process.env.APP_VARIANT === 'development';
+
+export default {
   "expo": {
-    "name": "Art Museum",
+    name: IS_DEV ? "Art Museum (Dev)" : "Art Museum",
     "slug": "appjs24-workflows-workshop-code",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,14 +19,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.appjs24-workflows.appjs24-workflows-workshop-code"
+      "bundleIdentifier": "com.expo.appjs24-workflows-workshop-code" + (IS_DEV ? "-dev" : "")
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.appjs24workflows.appjs24workflowsworkshopcode"
+      "package": "com.expo.appjs24workflowsworkshopcode" + (IS_DEV ? "dev" : ""),
     },
     "web": {
       "bundler": "metro",
@@ -39,6 +41,19 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "35d5cfa9-5af2-4bf6-8e38-6de0a68be7a5"
+      }
+    },
+    "owner": "ivan.varga",
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/35d5cfa9-5af2-4bf6-8e38-6de0a68be7a5"
     }
   }
 }
